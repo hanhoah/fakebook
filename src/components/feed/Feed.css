@@ -1,3 +1,7 @@
 .feed {
   background-color: bisque;
 }
+
+MessageSender {
+  border: 2px solidblack;
+}

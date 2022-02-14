@@ -1,0 +1,24 @@
+input {
+  background-color: #e3e3e3;
+  border-radius: 7px;
+  border: 0px;
+}
+
+.messageSender__top {
+  display: flex;
+  padding: 15px;
+  border-bottom: 1px solid #eff2f5;
+}
+
+.messageSender__top form {
+  display: flex;
+  flex: 1;
+}
+
+.messageSender__top form input {
+  margin: 0px 10px;
+  padding: 5px 20px;
+  outline-width: 0;
+  display: flex;
+  flex: 1;
+}
