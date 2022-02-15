@@ -5,7 +5,7 @@ import MessageSender__bottom from "./MessageSender__bottom";
 
 function MessageSender() {
   return (
-    <div className="messageasdsSender">
+    <div className="messageSender">
       <MessageSender__top />
       <MessageSender__bottom />
     </div>
