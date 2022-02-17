@@ -3,6 +3,10 @@ import Header from "./components/header/Header";
 import Sidebar from "./components/sidebar/Sidebar";
 import Feed from "./components/feed/Feed";
 import "./App.css";
+import FakebookContextProvider, {
+  FakebookContext,
+} from "./contexts/FakebookContext";
+import PostContextProvider from "./contexts/PostContext";
 
 function App() {
   return (
@@ -10,8 +14,12 @@ function App() {
       <>
         <Header />
         <div className="app__body">
-          <Sidebar />
-          <Feed />
+          <FakebookContextProvider>
+            <Sidebar />
+            <PostContextProvider>
+              <Feed />
+            </PostContextProvider>
+          </FakebookContextProvider>
         </div>
       </>
     </div>

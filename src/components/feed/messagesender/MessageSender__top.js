@@ -1,22 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import "./MessageSender__top.css";
 import { Avatar } from "@material-ui/core";
+import { FakebookContext } from "../../../contexts/FakebookContext";
+import { PostContext } from "../../../contexts/PostContext";
 
 function MessageSender__top() {
   const [input, setInput] = useState("");
   const [imgUrl, setImgUrl] = useState("");
-  const [posts, setPosts] = useState([]);
+
   // the logged in User
-  const [user, setUser] = useState({
-    id: 5,
-    name: "Max Mustermann",
-  });
+  const { user } = useContext(FakebookContext);
+  console.log("context user ", user);
+  const { addPost } = useContext(PostContext);
 
-  // In den LocalStorage speichern
-  useEffect(() => {
-    localStorage.setItem("posts", JSON.stringify(posts));
-  });
-
+  console.log("addPost ist ", addPost);
   const processMessage = (e) => {
     // Standard Formularverhalten deaktivieren
     e.preventDefault();
@@ -31,13 +28,12 @@ function MessageSender__top() {
 
     console.log(singlepost);
 
-    // in posts useState hinzufügen
-    setPosts([...posts, singlepost]);
+    //addPost von Feed.js aufrufen und singlepost übergeben
+    addPost(singlepost);
 
     // Formularfelder wieder leeren
     setInput("");
     setImgUrl("");
-    console.log(localStorage.getItem("posts"));
   };
 
   return (
