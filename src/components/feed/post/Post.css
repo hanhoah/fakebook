@@ -30,3 +30,8 @@
   font-size: small;
   color: grey;
 }
+
+.post__bottom {
+  margin: 10px 0 10px 0;
+  padding: 15px 25px;
+}

@@ -1,22 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import Stories from "./stories/Stories";
 import MessageSender from "./messagesender/MessageSender";
 import Post from "./post/Post";
 
+// let PostModel = require("../../db/post.model");
+
+// console.log(PostModel);
+/*
+PostModel.find((err, posts) => {
+  if (err) console.log(err);
+  else {
+    console.log(posts);
+  }
+});
+
+*/
+
 function Feed() {
+  //const [posts, setPosts] = useState([]);
+  const posts = JSON.parse(localStorage.getItem("posts"));
+  console.log("post from feed.js", posts);
+
+  function createPosts(post) {
+    console.log("create post" + post);
+  }
+
   return (
     <div className="feed">
       <Stories />
       <MessageSender />
-      {/* Enter your Post */}
+      {console.log("posts ist ", typeof posts)}
       <Post
-        postImage="https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHJhbmRvbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+        postImage="https://images.unsplash.com/photo-1643996549856-102ea1121a8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDF8X2hiLWRsNFEtNFV8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
         profilePic="https://randomuser.me/api/portraits/men/42.jpg"
         message="Hello I am Post 1"
         username="Hans"
       />
       <Post
-        profilePic="https://images.unsplash.com/photo-1589809489704-6a6a3b524023?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHJhbmRvbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+        profilePic="https://randomuser.me/api/portraits/men/68.jpg"
+        postImage="https://images.unsplash.com/photo-1644612105654-b6b0a941ecde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDV8X2hiLWRsNFEtNFV8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
         message="Hello I am Post 2"
         username="Frans"
       />
@@ -26,7 +48,7 @@ function Feed() {
         username="Lanz"
       />
       <Post
-        postImage="https://images.unsplash.com/photo-1504083898675-c896ecdae86e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHJhbmRvbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+        postImage="https://images.unsplash.com/photo-1497083924848-a8a88f919070?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDIzMXxfaGItZGw0US00VXx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
         profilePic="https://randomuser.me/api/portraits/men/44.jpg"
         message="Hello I am Post 4"
         username="Detlef"

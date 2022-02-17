@@ -1,16 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./MessageSender__top.css";
 import { Avatar } from "@material-ui/core";
 
 function MessageSender__top() {
   const [input, setInput] = useState("");
   const [imgUrl, setImgUrl] = useState("");
+  const [posts, setPosts] = useState([]);
+
+  // In den LocalStorage speichern
+  useEffect(() => {
+    localStorage.setItem("posts", JSON.stringify(posts));
+  });
 
   const processMessage = (e) => {
-    console.log("i will send your message to the DB");
+    // Standard Formularverhalten deaktivieren
     e.preventDefault();
+
+    // Objekt erzeugen
+    let singlepost = {
+      input,
+      imgUrl,
+    };
+
+    console.log("single post", singlepost);
+    // in posts useState hinzufügen
+    setPosts([...posts, singlepost]);
+
+    // Formularfelder wieder leeren
     setInput("");
     setImgUrl("");
+    console.log(localStorage.getItem("posts"));
   };
 
   return (

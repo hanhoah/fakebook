@@ -1,6 +1,7 @@
 import React from "react";
 import "./Post.css";
 import { Avatar } from "@material-ui/core";
+import Reactions from "./reactions/Reactions";
 
 function Post({ profilePic, postImage, username, timestamp, message }) {
   return (
@@ -17,6 +18,7 @@ function Post({ profilePic, postImage, username, timestamp, message }) {
       <div className="post__image">
         <img src={postImage} />
       </div>
+      <Reactions />
     </div>
   );
 }
