@@ -24,16 +24,16 @@ function Header() {
       </div>
       <div className="header__center">
         <div className="header__option header__option--active">
-          <HomeIcon fonSize="large" />
+          <HomeIcon fontSize="large" />
         </div>
         <div className="header__option">
-          <PeopleIcon fonSize="large" />
+          <PeopleIcon fontSize="large" />
         </div>
         <div className="header__option">
-          <YouTubeIcon fonSize="large" />
+          <YouTubeIcon fontSize="large" />
         </div>
         <div className="header__option">
-          <StorefrontIcon fonSize="large" />
+          <StorefrontIcon fontSize="large" />
         </div>
       </div>
       <div className="header__right">

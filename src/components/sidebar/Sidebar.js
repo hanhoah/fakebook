@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SidebarRow from "./SidebarRow";
 import "./Sidebar.css";
 import PeopleIcon from "@material-ui/icons/People";
@@ -13,7 +13,7 @@ function Sidebar() {
     <div className="sidebar">
       <SidebarRow
         title="Max Mustermann"
-        src="https://randomuser.me/api/portraits/men/41.jpg"
+        src="https://randomuser.me/api/portraits/men/5.jpg"
       />
       <SidebarRow title="Freunde finden" src="" Icon={PeopleIcon} />
       <SidebarRow title="Gruppen" src="" Icon={PeopleOutlineIcon} />
